@@ -8,8 +8,8 @@ export default function ProjectCard({ title, src, name, url }) {
         className="rounded-xl group-hover:opacity-10 "
         src={src}
         alt={title}
-        width={500}
-        height={500}
+        width={600}
+        height={200}
       />
       <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
         <h3 className="text-white text-2xl text-center tracking-wider">

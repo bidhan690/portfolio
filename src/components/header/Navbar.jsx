@@ -6,6 +6,20 @@ import HeaderLinks, { SmallHeaderLinks, SmallIcons } from "./HeaderUtil";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { motion } from "framer-motion";
 
+const imageVariants = {
+  hidden: {
+    scale: 0.9,
+  },
+  visible: {
+    scale: 1,
+  },
+  hover: {
+    scale: 1.1,
+    transition: {
+      duration: 0.3,
+    },
+  },
+};
 const Navbar = () => {
   const [navBarToggle, setNavBarToggle] = useState(false);
   const [navShadow, setNavShadow] = useState(false);
@@ -14,12 +28,18 @@ const Navbar = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (router.asPath === "/projects/property-finder") {
-      setNavBg("transparent");
-      setLinkColor("#f8f8f8");
-    } else {
+    if (
+      router.asPath === "/" ||
+      router.asPath === "/#contact" ||
+      router.asPath === "/#about" ||
+      router.asPath === "/#projects" ||
+      router.asPath === "/#skills"
+    ) {
       setNavBg("#ecf0f3");
       setLinkColor("#1f2937");
+    } else {
+      setNavBg("transparent");
+      setLinkColor("#f8f8f8");
     }
   }, [router]);
 
@@ -45,9 +65,10 @@ const Navbar = () => {
     >
       <div className="flex  justify-between items-center h-full w-full px-2 xl:px-16">
         <motion.div
-          drag
-          dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
-          dragElastic={0.4}
+          variants={imageVariants}
+          initial="hidden"
+          animate="visible"
+          whileHover="hover"
         >
           <Link href="/">
             <Image

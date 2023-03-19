@@ -18,7 +18,21 @@ const projectVariants = {
   },
 };
 
-export default function Projects() {
+const cardVariants = {
+  hidden: {
+    x: "-100px",
+  },
+  visible: {
+    x: 0,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      duration: 1,
+    },
+  },
+};
+
+export default function Projects({ items }) {
   return (
     <div id="projects" className="w-full">
       <div className="max-w-[1240px] mx-auto px-2 py-16 ">
@@ -33,32 +47,25 @@ export default function Projects() {
         >
           What I&apos;ve built{" "}
         </motion.h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          <ProjectCard
-            url="/projects/property-finder"
-            title="Property Finder"
-            name="React JS"
-            src="/assets/projects/property.jpg"
-          />
-          <ProjectCard
-            url="/projects/netflix"
-            title="Netflix"
-            name="Next JS"
-            src="/assets/projects/netflix.jpg"
-          />
-          <ProjectCard
-            url="/projects/crypto"
-            title="Crypto App"
-            name="Next JS"
-            src="/assets/projects/crypto.jpg"
-          />
-          <ProjectCard
-            url="/projects/twitch"
-            title="Twitch"
-            name="Next JS"
-            src="/assets/projects/twitch.jpg"
-          />
-        </div>
+        <motion.div
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          className="grid md:grid-cols-2 gap-8"
+        >
+          {items &&
+            items.map((itemss) => {
+              return (
+                <ProjectCard
+                  key={itemss._id}
+                  url={`/projects/${itemss._id}`}
+                  title={itemss.projectName}
+                  name={itemss.techUsed}
+                  src={itemss.imageLink}
+                />
+              );
+            })}
+        </motion.div>
       </div>
     </div>
   );

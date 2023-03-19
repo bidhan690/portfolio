@@ -6,7 +6,9 @@ import Skills from "@/components/skills/Skills";
 import Projects from "@/components/projects/Projects";
 import Contact from "@/components/contact/Contact";
 
-export default function Home() {
+import { getData } from "@/helpers/mongodb";
+
+export default function Home({ latestPosts }) {
   return (
     <>
       <Head>
@@ -16,13 +18,21 @@ export default function Home() {
           content="Hello, My name is bidhan niroula. I am from Nepal. This is my nextjs Portfolio!"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="/assets/bidhan.ico" rel="icon" type="image/x-icon" />
       </Head>
 
       <Hero />
       <About />
       <Skills />
-      <Projects />
+      <Projects items={latestPosts} />
       <Contact />
     </>
   );
+}
+
+export async function getStaticProps() {
+  const data = await getData("projects");
+  const latestPosts = data.slice(0, 4);
+
+  return { props: { latestPosts }, revalidate: 300 };
 }

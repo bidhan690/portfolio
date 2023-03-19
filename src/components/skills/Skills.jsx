@@ -11,6 +11,7 @@ const skillsVariants = {
       type: "spring",
       stiffness: 200,
       ease: "easeInOut",
+
       staggerChildren: 1,
       when: "beforeChildren",
     },

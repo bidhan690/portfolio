@@ -49,13 +49,25 @@ export function SmallHeaderLinks({ name, href, onClick }) {
 }
 
 export function Icons() {
+  const iconsVariants = {
+    hover: {
+      scale: 1.2,
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 200,
+      },
+    },
+  };
   return (
     <>
       <motion.div
+        variants={iconsVariants}
+        whileHover="hover"
         drag
         dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
         dragElastic={0.4}
-        className="mx-4 rounded-full shadow-lg shadow-gray-400 p-6 cursor-grab hover:scale-110 ease-in duration-300"
+        className="mx-4 rounded-full shadow-lg shadow-gray-400 p-6 cursor-grab "
         onClick={() =>
           window.open("https://www.linkedin.com/in/bidhan-niroula-78722822a/")
         }
@@ -63,19 +75,23 @@ export function Icons() {
         <FaLinkedinIn />
       </motion.div>
       <motion.div
+        variants={iconsVariants}
+        whileHover="hover"
         drag
         dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
         dragElastic={0.4}
-        className="mx-4 rounded-full shadow-lg shadow-gray-400 p-6 cursor-grab hover:scale-110 ease-in duration-300"
+        className="mx-4 rounded-full shadow-lg shadow-gray-400 p-6 cursor-grab "
         onClick={() => window.open("https://www.github.com/bidhan690/")}
       >
         <FaGithub />
       </motion.div>
       <motion.div
+        variants={iconsVariants}
+        whileHover="hover"
         drag
         dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
         dragElastic={0.4}
-        className="mx-4 rounded-full shadow-lg shadow-gray-400 p-6 cursor-grab hover:scale-110 ease-in duration-300"
+        className="mx-4 rounded-full shadow-lg shadow-gray-400 p-6 cursor-grab  "
         onClick={() =>
           window.open("mailto:88bidhanniroula@gmail.com", "_blank")
         }
@@ -83,10 +99,12 @@ export function Icons() {
         <AiOutlineMail />
       </motion.div>
       <motion.div
+        variants={iconsVariants}
+        whileHover="hover"
         drag
         dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
         dragElastic={0.4}
-        className="mx-4 rounded-full shadow-lg shadow-gray-400 p-6 cursor-grab hover:scale-110 ease-in duration-300"
+        className="mx-4 rounded-full shadow-lg shadow-gray-400 p-6 cursor-grab  "
         onClick={() => window.open("tel:+9779820359083", "_blank")}
       >
         <BsFillPersonLinesFill />
@@ -131,13 +149,25 @@ export function SmallIcons() {
 }
 
 export function ContactIcons() {
+  const iconsVariants = {
+    hover: {
+      scale: 1.2,
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+      },
+    },
+  };
   return (
     <>
       <motion.div
+        variants={iconsVariants}
+        whileHover="hover"
         drag
         dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
         dragElastic={0.4}
-        className="mx-4 rounded-full shadow-lg shadow-gray-400 p-6 cursor-grab hover:scale-110 ease-in duration-300"
+        className="mx-4 rounded-full shadow-lg shadow-gray-400 p-6 cursor-grab"
         onClick={() =>
           window.open("https://www.facebook.com/newbidhan.niroula/")
         }
@@ -145,19 +175,23 @@ export function ContactIcons() {
         <FaFacebook />
       </motion.div>
       <motion.div
+        variants={iconsVariants}
+        whileHover="hover"
         drag
         dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
         dragElastic={0.4}
-        className="mx-4 rounded-full shadow-lg shadow-gray-400 p-6 cursor-grab hover:scale-110 ease-in duration-300"
+        className="mx-4 rounded-full shadow-lg shadow-gray-400 p-6 cursor-grab "
         onClick={() => window.open("https://www.instagram.com/bidhan_niroula/")}
       >
         <FaInstagram />
       </motion.div>
       <motion.div
+        variants={iconsVariants}
+        whileHover="hover"
         drag
         dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
         dragElastic={0.4}
-        className="mx-4 rounded-full shadow-lg shadow-gray-400 p-6 cursor-grab hover:scale-110 ease-in duration-300"
+        className="mx-4 rounded-full shadow-lg shadow-gray-400 p-6 cursor-grab "
         onClick={() =>
           window.open("mailto:88bidhanniroula@gmail.com", "_blank")
         }
