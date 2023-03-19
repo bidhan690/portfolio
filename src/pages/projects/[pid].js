@@ -38,7 +38,7 @@ export default function DynamicProjects({ data }) {
           <Image
             className="absolute z-1 object-cover"
             fill
-            src="/assets/projects/property.jpg"
+            src={data[0].imageLink}
             alt={data[0].projectName}
             priority
           />
