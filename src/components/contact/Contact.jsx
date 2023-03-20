@@ -223,11 +223,15 @@ export default function Contact() {
                     className="w-full p-4 text-gray-100  mr-2 hover:opacity-80 dark:shadow-gray-900"
                     disabled={isSending}
                   >
-                    Send Message
+                    {isSending ? "Message Sending..........." : "Send Message"}
                   </button>
-
-                  {success && <SiCachet size={30} />}
                 </div>
+                {success && (
+                  <div className="flex justify-center mt-4">
+                    <p className="dark:text-white mr-4">Message Sent!</p>{" "}
+                    <SiCachet className="dark:text-white" size={30} />
+                  </div>
+                )}
                 {error && (
                   <p className="text-red-500 text-center m-2">{error}</p>
                 )}
