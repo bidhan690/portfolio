@@ -91,14 +91,14 @@ export default function Contact() {
   return (
     <div id="contact" className="w-full lg:h-screen  ">
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full  ">
-        <p className="text-xl mt-8 tracking-widest uppercase text-[#5651e5]">
+        <p className="text-xl mt-8 tracking-widest uppercase text-[#5651e5] ">
           Contact Me
         </p>
         <motion.h2
           variants={h2Variants}
           initial="hidden"
           whileInView="visible"
-          className="py-4"
+          className="py-4 dark:text-[#F6F7F9]/90"
         >
           Get In Touch
         </motion.h2>
@@ -107,7 +107,7 @@ export default function Contact() {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            className="col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 rounded-xl p-4"
+            className="col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 dark:shadow-gray-900/60 rounded-xl p-4"
           >
             <div className="lg:p-4 h-full">
               <div>
@@ -121,31 +121,36 @@ export default function Contact() {
                 />
               </div>
               <div>
-                <h2 className="py-2">Bidhan Niroula </h2>
-                <p>Full-Stack Developer</p>
-                <p className="py-4">
+                <h2 className="py-2 dark:text-[#F6F7F9]/90">Bidhan Niroula </h2>
+                <p className="dark:text-[#F6F7F9]/90">Full-Stack Developer</p>
+                <p className="py-4 dark:text-[#F6F7F9]/90">
                   I am available for freelance or fulltime positions. Contact me
                   and let&apos;s talk.
                 </p>
               </div>
               <div>
-                <p className="uppercase pt-8">Connect With Me</p>
+                <p className="uppercase pt-8 dark:text-[#F6F7F9]/90">
+                  Connect With Me
+                </p>
                 <div className="flex justify-around items-center pt-3">
                   <ContactIcons />
                 </div>
               </div>
             </div>
           </motion.div>
-          <div className="col-span-3 w-full  h-auto rounded-xl shadow-xl shadow-gray-400 lg:p-4 ">
+          <div className="col-span-3 w-full  h-auto rounded-xl shadow-xl shadow-gray-400 dark:shadow-gray-900 lg:p-4 ">
             <div className="p-4">
               <form onSubmit={submitHandler}>
                 <div className="grid md:grid-cols-2 gap-4 w-full py-4">
                   <div className="flex flex-col ">
-                    <label className="uppercase text-sm py-2" htmlFor="name">
+                    <label
+                      className="uppercase text-sm py-2 dark:text-[#F6F7F9]/90"
+                      htmlFor="name"
+                    >
                       Name
                     </label>
                     <input
-                      className="border-2 rounded-lg flex border-gray-300"
+                      className="border-2 rounded-lg flex border-gray-300 "
                       type="text"
                       value={name}
                       name="name"
@@ -153,7 +158,10 @@ export default function Contact() {
                     />
                   </div>
                   <div className="flex flex-col ">
-                    <label className="uppercase text-sm py-2" htmlFor="number">
+                    <label
+                      className="uppercase text-sm py-2 dark:text-[#F6F7F9]/90"
+                      htmlFor="number "
+                    >
                       Phone Number
                     </label>
                     <input
@@ -166,7 +174,10 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="flex flex-col ">
-                  <label className="uppercase text-sm py-2" htmlFor="email">
+                  <label
+                    className="uppercase text-sm py-2 dark:text-[#F6F7F9]/90"
+                    htmlFor="email"
+                  >
                     Email
                   </label>
                   <input
@@ -178,7 +189,10 @@ export default function Contact() {
                   />
                 </div>
                 <div className="flex flex-col ">
-                  <label className="uppercase text-sm py-2" htmlFor="subject">
+                  <label
+                    className="uppercase text-sm py-2 dark:text-[#F6F7F9]/90"
+                    htmlFor="subject"
+                  >
                     Subject
                   </label>
                   <input
@@ -190,7 +204,10 @@ export default function Contact() {
                   />
                 </div>
                 <div className="flex flex-col ">
-                  <label className="uppercase text-sm py-2" htmlFor="message">
+                  <label
+                    className="uppercase text-sm py-2 dark:text-[#F6F7F9]/90"
+                    htmlFor="message"
+                  >
                     Message
                   </label>
                   <textarea
@@ -203,7 +220,7 @@ export default function Contact() {
                 </div>
                 <div className=" flex justify-center items-center mt-2">
                   <button
-                    className="w-full p-4 text-gray-100  mr-2 hover:opacity-80"
+                    className="w-full p-4 text-gray-100  mr-2 hover:opacity-80 dark:shadow-gray-900"
                     disabled={isSending}
                   >
                     Send Message
@@ -232,7 +249,7 @@ export default function Contact() {
             drag
             dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
             dragElastic={0.7}
-            className="mx-4 rounded-full shadow-lg shadow-gray-400 p-6 cursor-grab "
+            className="mx-4 rounded-full shadow-lg shadow-gray-400 dark:shadow-gray-600/40 p-6 cursor-grab "
           >
             <HiOutlineChevronDoubleUp size={30} className="text-[#5651e5]" />
           </HovLink>

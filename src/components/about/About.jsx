@@ -42,14 +42,14 @@ export default function About() {
           initial="hidden"
           whileInView="visible"
         >
-          <p className="py-4 uppercase text-xl tracking-widest text-[#5651e5]">
+          <p className="py-4 uppercase text-xl tracking-widest text-[#5651e5] ">
             About
           </p>
-          <h2 className="py-2 text-gray-600">Who I Am?</h2>
-          <p className="py-2 text-gray-600">
+          <h2 className="py-2 text-gray-600 dark:text-[#F6F7F9]">Who I Am?</h2>
+          <p className="py-2 text-gray-600 dark:text-[#F6F7F9]/70">
             {"// I am not your normal developer"}
           </p>
-          <p className="py-2 text-gray-600">
+          <p className="py-2 text-gray-600 dark:text-[#F6F7F9]">
             I am a Next.js developer with 2 years of experience in building
             full-stack web applications. My skills include HTML, CSS,
             JavaScript, React, Next.js and Flutter. I have a passion for
@@ -57,7 +57,10 @@ export default function About() {
             meet the needs of my clients. In my free time, I enjoy indulging in
             my favorite dish - chicken chilly.
           </p>
-          <Link href='/#projects' className="py-2 text-gray-600 underline cursor-pointer">
+          <Link
+            href="/#projects"
+            className="py-2 text-gray-600 underline cursor-pointer dark:text-[#F6F7F9]/90"
+          >
             Checkout some of my latest projects!
           </Link>
         </motion.div>

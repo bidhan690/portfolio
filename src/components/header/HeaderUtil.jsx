@@ -30,7 +30,7 @@ export default function HeaderLinks({ name, href }) {
       variants={navLinkVariants}
       whileHover="hover"
       href={href}
-      className="ml-10 text-sm uppercase hover:border-b"
+      className="ml-10 text-sm uppercase hover:border-b dark:text-white"
     >
       {name}
     </MotionLink>
@@ -43,7 +43,7 @@ export function SmallHeaderLinks({ name, href, onClick }) {
   };
   return (
     <Link href={href} onClick={handleClick}>
-      <li className="py-4 text-sm uppercase">{name}</li>
+      <li className="py-4 text-sm uppercase dark:text-[#F6F7F9]">{name}</li>
     </Link>
   );
 }
@@ -67,12 +67,12 @@ export function Icons() {
         drag
         dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
         dragElastic={0.4}
-        className="mx-4 rounded-full shadow-lg shadow-gray-400 p-6 cursor-grab "
+        className="mx-4 rounded-full shadow-lg shadow-gray-400 dark:shadow-[#fff]/20 p-6 cursor-grab  "
         onClick={() =>
           window.open("https://www.linkedin.com/in/bidhan-niroula-78722822a/")
         }
       >
-        <FaLinkedinIn />
+        <FaLinkedinIn className="dark:text-[#F6F7F9]" />
       </motion.div>
       <motion.div
         variants={iconsVariants}
@@ -80,10 +80,10 @@ export function Icons() {
         drag
         dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
         dragElastic={0.4}
-        className="mx-4 rounded-full shadow-lg shadow-gray-400 p-6 cursor-grab "
+        className="mx-4 rounded-full shadow-lg shadow-gray-400 dark:shadow-[#fff]/20 p-6 cursor-grab  "
         onClick={() => window.open("https://www.github.com/bidhan690/")}
       >
-        <FaGithub />
+        <FaGithub className="dark:text-[#F6F7F9]" />
       </motion.div>
       <motion.div
         variants={iconsVariants}
@@ -91,12 +91,12 @@ export function Icons() {
         drag
         dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
         dragElastic={0.4}
-        className="mx-4 rounded-full shadow-lg shadow-gray-400 p-6 cursor-grab  "
+        className="mx-4 rounded-full shadow-lg shadow-gray-400 dark:shadow-[#fff]/20 p-6 cursor-grab  "
         onClick={() =>
           window.open("mailto:88bidhanniroula@gmail.com", "_blank")
         }
       >
-        <AiOutlineMail />
+        <AiOutlineMail className="dark:text-[#F6F7F9]" />
       </motion.div>
       <motion.div
         variants={iconsVariants}
@@ -104,10 +104,10 @@ export function Icons() {
         drag
         dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
         dragElastic={0.4}
-        className="mx-4 rounded-full shadow-lg shadow-gray-400 p-6 cursor-grab  "
+        className="mx-4   rounded-full shadow-lg shadow-gray-400 dark:shadow-[#fff]/20 p-6  cursor-grab  "
         onClick={() => window.open("tel:+9779820359083", "_blank")}
       >
-        <BsFillPersonLinesFill />
+        <BsFillPersonLinesFill className=" dark:text-[#F6F7F9]" />
       </motion.div>
     </>
   );
@@ -117,32 +117,32 @@ export function SmallIcons() {
   return (
     <>
       <div
-        className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300"
+        className="rounded-full shadow-lg shadow-gray-400 dark:shadow-[#fff]/20 p-3 cursor-pointer hover:scale-105 ease-in duration-300"
         onClick={() =>
           window.open("https://www.linkedin.com/in/bidhan-niroula-78722822a/")
         }
       >
-        <FaLinkedinIn />
+        <FaLinkedinIn className="dark:text-[#F6F7F9]" />
       </div>
       <div
-        className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300"
+        className="rounded-full shadow-lg shadow-gray-400 dark:shadow-[#fff]/20 p-3 cursor-pointer hover:scale-105 ease-in duration-300"
         onClick={() => window.open("https://www.github.com/bidhan690/")}
       >
-        <FaGithub />
+        <FaGithub className="dark:text-[#F6F7F9]" />
       </div>
       <div
-        className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300"
+        className="rounded-full shadow-lg shadow-gray-400 dark:shadow-[#fff]/20 p-3 cursor-pointer hover:scale-105 ease-in duration-300"
         onClick={() =>
           window.open("mailto:88bidhanniroula@gmail.com", "_blank")
         }
       >
-        <AiOutlineMail />
+        <AiOutlineMail className="dark:text-[#F6F7F9]" />
       </div>
       <div
-        className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300"
+        className="rounded-full shadow-lg shadow-gray-400 dark:shadow-[#fff]/20 p-3 cursor-pointer hover:scale-105 ease-in duration-300"
         onClick={() => window.open("tel:+9779820359083", "_blank")}
       >
-        <BsFillPersonLinesFill />
+        <BsFillPersonLinesFill className="dark:text-[#F6F7F9]" />
       </div>
     </>
   );
@@ -167,12 +167,12 @@ export function ContactIcons() {
         drag
         dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
         dragElastic={0.4}
-        className="mx-4 rounded-full shadow-lg shadow-gray-400 p-6 cursor-grab"
+        className="mx-4 rounded-full shadow-lg shadow-gray-400 dark:shadow-gray-600 p-6 cursor-grab"
         onClick={() =>
           window.open("https://www.facebook.com/newbidhan.niroula/")
         }
       >
-        <FaFacebook />
+        <FaFacebook className="dark:text-[#F6F7F9]" />
       </motion.div>
       <motion.div
         variants={iconsVariants}
@@ -180,10 +180,10 @@ export function ContactIcons() {
         drag
         dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
         dragElastic={0.4}
-        className="mx-4 rounded-full shadow-lg shadow-gray-400 p-6 cursor-grab "
+        className="mx-4 rounded-full shadow-lg shadow-gray-400 dark:shadow-gray-600 p-6 cursor-grab "
         onClick={() => window.open("https://www.instagram.com/bidhan_niroula/")}
       >
-        <FaInstagram />
+        <FaInstagram className="dark:text-[#F6F7F9]" />
       </motion.div>
       <motion.div
         variants={iconsVariants}
@@ -191,12 +191,12 @@ export function ContactIcons() {
         drag
         dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
         dragElastic={0.4}
-        className="mx-4 rounded-full shadow-lg shadow-gray-400 p-6 cursor-grab "
+        className="mx-4 rounded-full shadow-lg shadow-gray-400 dark:shadow-gray-600 p-6 cursor-grab "
         onClick={() =>
           window.open("mailto:88bidhanniroula@gmail.com", "_blank")
         }
       >
-        <AiOutlineMail />
+        <AiOutlineMail className="dark:text-[#F6F7F9]" />
       </motion.div>
     </>
   );

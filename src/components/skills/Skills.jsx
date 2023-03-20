@@ -43,7 +43,7 @@ export default function Skills() {
         >
           Skills
         </motion.p>
-        <h2 className="py-4">What Can I Do?</h2>
+        <h2 className="py-4 dark:text-[#F6F7F9]">What Can I Do</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <motion.div
             variants={skillsCardVariants}

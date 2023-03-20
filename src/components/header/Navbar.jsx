@@ -4,7 +4,8 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import HeaderLinks, { SmallHeaderLinks, SmallIcons } from "./HeaderUtil";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { CiLight, CiDark } from "react-icons/ci";
 
 const imageVariants = {
   hidden: {
@@ -20,12 +21,45 @@ const imageVariants = {
     },
   },
 };
+
+const darkVariants = {
+  hidden: {
+    y: "-100px",
+  },
+  visible: {
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
 const Navbar = () => {
   const [navBarToggle, setNavBarToggle] = useState(false);
   const [navShadow, setNavShadow] = useState(false);
   const [navBg, setNavBg] = useState("#ecf0f3");
   const [linkColor, setLinkColor] = useState("#1f2937");
   const router = useRouter();
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      setDarkMode(true);
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
+  const toggleDarkMode = () => {
+    const isDark = !darkMode;
+    setDarkMode(!darkMode);
+    localStorage.setItem("dark", isDark);
+    document.documentElement.classList.toggle("dark", isDark);
+  };
 
   useEffect(() => {
     if (
@@ -33,7 +67,8 @@ const Navbar = () => {
       router.asPath === "/#contact" ||
       router.asPath === "/#about" ||
       router.asPath === "/#projects" ||
-      router.asPath === "/#skills"
+      router.asPath === "/#skills" ||
+      !darkMode
     ) {
       setNavBg("#ecf0f3");
       setLinkColor("#1f2937");
@@ -41,7 +76,8 @@ const Navbar = () => {
       setNavBg("transparent");
       setLinkColor("#f8f8f8");
     }
-  }, [router]);
+    darkMode && setNavBg("#23272F");
+  }, [router, darkMode]);
 
   useEffect(() => {
     const handleShadow = () => {
@@ -82,18 +118,76 @@ const Navbar = () => {
         </motion.div>
 
         <div>
-          <ul style={{ color: `${linkColor}` }} className="hidden md:flex">
+          <ul
+            style={{ color: `${linkColor}` }}
+            className="hidden md:flex items-center "
+          >
             <HeaderLinks href="/" name="Home" />
             <HeaderLinks href="/#about" name="about" />
             <HeaderLinks href="/#skills" name="skills" />
             <HeaderLinks href="/#projects" name="Projects" />
             <HeaderLinks href="/#contact" name="Contact" />
+
+            {darkMode ? (
+              <motion.div
+                key="light-icon"
+                variants={darkVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                className="ml-8 cursor-pointer"
+                onClick={toggleDarkMode}
+              >
+                <CiLight size={30} color={darkMode ? "white" : ""} />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="dark-icon"
+                variants={darkVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                className="ml-8 cursor-pointer"
+                onClick={toggleDarkMode}
+              >
+                <CiDark size={30} />
+              </motion.div>
+            )}
           </ul>
-          <div
-            className="md:hidden pr-2"
-            onClick={() => setNavBarToggle(!navBarToggle)}
-          >
-            <AiOutlineMenu size={25} />
+
+          <div className="md:hidden pr-2 flex m-2 items-center">
+            {darkMode ? (
+              <motion.div
+                key="light-icon"
+                variants={darkVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                className="mr-12 cursor-pointer"
+                onClick={toggleDarkMode}
+              >
+                <CiLight size={30} color={darkMode ? "white" : ""} />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="dark-icon"
+                variants={darkVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                className="mr-12 cursor-pointer"
+                onClick={toggleDarkMode}
+              >
+                <CiDark size={30} />
+              </motion.div>
+            )}
+            <div>
+              <AiOutlineMenu
+                size={25}
+                color={darkMode ? "white" : ""}
+                onClick={() => setNavBarToggle(!navBarToggle)}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -108,12 +202,12 @@ const Navbar = () => {
         <div
           className={
             navBarToggle
-              ? "fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500 "
+              ? "fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] dark:bg-[#23272F] p-10 ease-in duration-500 "
               : "fixed left-[-100%] top-0 p-10 ease-in duration-300 "
           }
         >
           <div>
-            <div className="flex justify-between items-center ">
+            <div className="flex justify-between items-center  overflow-y-hidden ">
               <Image
                 src="/assets/bn.png"
                 alt="bidhan niroula"
@@ -121,19 +215,19 @@ const Navbar = () => {
                 height={35}
               />
               <div
-                className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer"
+                className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer dark:shadow-red-500"
                 onClick={() => setNavBarToggle(!navBarToggle)}
               >
-                <AiOutlineClose />
+                <AiOutlineClose color={darkMode ? "white" : ""} />
               </div>
             </div>
             <div className="border-b border-gray-300 my-4 ">
-              <p className="w-[85%] md:w-[90%] py-4 ">
+              <p className="w-[85%] md:w-[90%] py-4 dark:text-[#F6F7F9]">
                 Let&apos;s build something legendary together{" "}
               </p>
             </div>
           </div>
-          <div className="py-4 flex flex-col">
+          <div className="h py-4 flex flex-col ">
             <ul className="">
               <SmallHeaderLinks
                 href="/"

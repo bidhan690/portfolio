@@ -55,11 +55,11 @@ export default function Hero() {
           variants={textVariants}
           initial="hidden"
           whileInView="visible"
-          className="uppercase text-sm tracking-widest text-gray-600"
+          className="uppercase text-sm mt-2 sm:mt-0 tracking-widest text-gray-600 dark:text-[#F6F7F9] "
         >
           Let&apos;s build something together
         </motion.p>
-        <h1 className="py-4 text-gray-700">
+        <h1 className="py-4 text-gray-700 dark:text-[#F6F7F9]/90">
           Hi, I&apos;m <AnimatedText />
         </h1>
 
@@ -68,7 +68,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           whileHover="hover"
-          className="py-4 text-gray-700"
+          className="py-4 text-gray-700 dark:text-[#F6F7F9]"
         >
           A Full-Stack Web Developer
         </motion.h1>
@@ -76,14 +76,14 @@ export default function Hero() {
           variants={pVariants}
           initial="hidden"
           whileInView="visible"
-          className="py-4 text-gray-600 max-w-[70%] "
+          className="py-4 text-gray-600 max-w-[70%] sm:py-2 dark:text-[#F6F7F1]/70"
         >
           As a Next.js developer, I specialize in building full-stack web
           applications using the popular React-based framework. With my
           expertise in Next.js and its features, I am able to create
           high-quality web applications that meet the needs of my clients.
         </motion.p>
-        <div className="flex items-center justify-between max-w-[330px] py-4">
+        <div className="flex items-center justify-around max-w-[330px] py-4 ">
           <Icons />
         </div>
       </div>

@@ -43,7 +43,7 @@ export default function Projects({ items }) {
           variants={projectVariants}
           initial="hidden"
           whileInView="visible"
-          className="py-2 text-gray-600"
+          className="py-2 text-gray-600 dark:text-[#F6F7F9]/90"
         >
           What I&apos;ve built{" "}
         </motion.h2>

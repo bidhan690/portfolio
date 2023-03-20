@@ -17,7 +17,7 @@ export default function Home({ latestPosts }) {
           name="description"
           content="Hello, My name is bidhan niroula. I am from Nepal. This is my nextjs Portfolio!"
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         <link href="/assets/bidhan.ico" rel="icon" type="image/x-icon" />
       </Head>
 

@@ -60,15 +60,15 @@ export default function DynamicProjects({ data }) {
             animate="visible"
             className="col-span-4"
           >
-            <p className="uppercase text-[#]">Project</p>
-            <h2 className=""> Overview</h2>
-            <p className="">{data[0].overviewText}</p>
+            <p className="uppercase text-[#5651e5] ">Project</p>
+            <h2 className="dark:text-[#F6F7F9]/90"> Overview</h2>
+            <p className="dark:text-[#F6F7F9]/90">{data[0].overviewText}</p>
             <motion.button
               whileHover={{
                 scale: 1.2,
                 transition: { type: "spring", stiffness: 200 },
               }}
-              className="px-8 py-2 mt-4 mr-8 "
+              className="px-8 py-2 mt-4 mr-8 dark:shadow-gray-600"
               onClick={() => window.open(data[0].demoLink)}
             >
               Demo
@@ -78,19 +78,22 @@ export default function DynamicProjects({ data }) {
                 scale: 1.2,
                 transition: { type: "spring", stiffness: 200 },
               }}
-              className="px-8 py-2 mt-4  "
+              className="px-8 py-2 mt-4  dark:shadow-gray-600"
               onClick={() => window.open(data[0].codeLink)}
             >
               Code
             </motion.button>
           </motion.div>
-          <div className="col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl p-2 ">
+          <div className="col-span-4 md:col-span-1 shadow-xl shadow-gray-400 dark:shadow-gray-600/60 rounded-xl p-2 dark:bg-slate-900">
             <div className="p-2">
-              <p className="text-center font-bold pb-2"> Technologies</p>
+              <p className="text-center font-bold pb-2 dark:text-[#F6F7F9]/90">
+                {" "}
+                Technologies
+              </p>
               <Techlist name={data[0].techArray} />
             </div>
           </div>
-          <Link href="/#projects" className="underline">
+          <Link href="/#projects" className="underline dark:text-[#F6F7F9]/90">
             {" "}
             Back
           </Link>
