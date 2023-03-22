@@ -220,10 +220,10 @@ export default function Contact() {
                 </div>
                 <div className=" flex justify-center items-center mt-2">
                   <button
-                    className="w-full p-4 text-gray-100  mr-2 hover:opacity-80 dark:shadow-gray-900"
+                    className="w-full p-4 text-gray-100 text-center   mr-2 hover:opacity-80 dark:shadow-gray-900"
                     disabled={isSending}
                   >
-                    {isSending ? "Message Sending..........." : "Send Message"}
+                    {isSending ? "......" : "Send Message"}
                   </button>
                 </div>
                 {success && (

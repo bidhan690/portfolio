@@ -1,6 +1,6 @@
 import ProjectCard from "./Project-card";
 import { motion } from "framer-motion";
-
+import Link from "next/link";
 const projectVariants = {
   hidden: {
     x: "-100px",
@@ -66,6 +66,13 @@ export default function Projects({ items }) {
               );
             })}
         </motion.div>
+      </div>
+      <div className="flex justify-start ml-3  lg:ml-16 ">
+        <Link href="/projects">
+          <p className="text-[20px] text-center underline dark:text-white">
+            See all my projects!
+          </p>
+        </Link>
       </div>
     </div>
   );

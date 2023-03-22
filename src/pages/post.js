@@ -68,6 +68,7 @@ export default function Post() {
       <button className="m-2 p-2 " onClick={submitData}>
         Submit
       </button>
+      <button onClick={() => signOut()}> Sign Out</button>
     </div>
   );
 }

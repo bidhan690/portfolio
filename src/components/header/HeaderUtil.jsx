@@ -67,7 +67,7 @@ export function Icons() {
         drag
         dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
         dragElastic={0.4}
-        className="mx-4 rounded-full shadow-lg shadow-gray-400 dark:shadow-[#fff]/20 p-6 cursor-grab  "
+        className="mx-4 rounded-full shadow-lg shadow-gray-400 dark:shadow-gray-700/60 p-6 cursor-grab  "
         onClick={() =>
           window.open("https://www.linkedin.com/in/bidhan-niroula-78722822a/")
         }
@@ -80,7 +80,7 @@ export function Icons() {
         drag
         dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
         dragElastic={0.4}
-        className="mx-4 rounded-full shadow-lg shadow-gray-400 dark:shadow-[#fff]/20 p-6 cursor-grab  "
+        className="mx-4 rounded-full shadow-lg shadow-gray-400 dark:shadow-gray-700/60 p-6 cursor-grab  "
         onClick={() => window.open("https://www.github.com/bidhan690/")}
       >
         <FaGithub className="dark:text-[#F6F7F9]" />
@@ -91,7 +91,7 @@ export function Icons() {
         drag
         dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
         dragElastic={0.4}
-        className="mx-4 rounded-full shadow-lg shadow-gray-400 dark:shadow-[#fff]/20 p-6 cursor-grab  "
+        className="mx-4 rounded-full shadow-lg shadow-gray-400 dark:shadow-gray-700/60 p-6 cursor-grab  "
         onClick={() =>
           window.open("mailto:88bidhanniroula@gmail.com", "_blank")
         }
@@ -104,7 +104,7 @@ export function Icons() {
         drag
         dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
         dragElastic={0.4}
-        className="mx-4   rounded-full shadow-lg shadow-gray-400 dark:shadow-[#fff]/20 p-6  cursor-grab  "
+        className="mx-4   rounded-full shadow-lg shadow-gray-400 dark:shadow-gray-700/60 p-6  cursor-grab  "
         onClick={() => window.open("tel:+9779820359083", "_blank")}
       >
         <BsFillPersonLinesFill className=" dark:text-[#F6F7F9]" />
@@ -167,7 +167,7 @@ export function ContactIcons() {
         drag
         dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
         dragElastic={0.4}
-        className="mx-4 rounded-full shadow-lg shadow-gray-400 dark:shadow-gray-600 p-6 cursor-grab"
+        className="mx-4 rounded-full shadow-lg shadow-gray-400 dark:shadow-gray-600/60 p-6 cursor-grab"
         onClick={() =>
           window.open("https://www.facebook.com/newbidhan.niroula/")
         }
@@ -180,7 +180,7 @@ export function ContactIcons() {
         drag
         dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
         dragElastic={0.4}
-        className="mx-4 rounded-full shadow-lg shadow-gray-400 dark:shadow-gray-600 p-6 cursor-grab "
+        className="mx-4 rounded-full shadow-lg shadow-gray-400 dark:shadow-gray-600/60 p-6 cursor-grab "
         onClick={() => window.open("https://www.instagram.com/bidhan_niroula/")}
       >
         <FaInstagram className="dark:text-[#F6F7F9]" />
@@ -191,7 +191,7 @@ export function ContactIcons() {
         drag
         dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
         dragElastic={0.4}
-        className="mx-4 rounded-full shadow-lg shadow-gray-400 dark:shadow-gray-600 p-6 cursor-grab "
+        className="mx-4 rounded-full shadow-lg shadow-gray-400 dark:shadow-gray-600/60 p-6 cursor-grab "
         onClick={() =>
           window.open("mailto:88bidhanniroula@gmail.com", "_blank")
         }
