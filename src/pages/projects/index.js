@@ -1,10 +1,10 @@
 import { getData } from "@/helpers/mongodb";
 import ProjectCard from "@/components/projects/Project-card";
 import { motion } from "framer-motion";
-
+import Head from "next/head";
 const textVariants = {
   hidden: {
-    y: "-200px",
+    y: "-100px",
   },
   visible: {
     y: 0,
@@ -32,6 +32,11 @@ const cardVariants = {
 
 export default function Projects({ projects }) {
   return (
+    <>
+    <Head>
+      <title>Projects</title>
+    </Head>
+    
     <div className=" w-full h-screen text-center  ">
       <div className="relative top-[150px] mb-6">
         <motion.h1
@@ -66,6 +71,7 @@ export default function Projects({ projects }) {
         </motion.div>
       </div>
     </div>
+    </>
   );
 }
 

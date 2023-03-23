@@ -224,6 +224,7 @@ export default function Contact() {
                     disabled={isSending}
                   >
                     {isSending ? "......" : "Send Message"}
+                   
                   </button>
                 </div>
                 {success && (
@@ -234,6 +235,7 @@ export default function Contact() {
                 )}
                 {error && (
                   <p className="text-red-500 text-center m-2">{error}</p>
+                  
                 )}
               </form>
             </div>
@@ -255,7 +257,7 @@ export default function Contact() {
             dragElastic={0.7}
             className="mx-4 rounded-full shadow-lg shadow-gray-400 dark:shadow-gray-600/40 p-6 cursor-grab "
           >
-            <HiOutlineChevronDoubleUp size={30} className="text-[#5651e5]" />
+            <HiOutlineChevronDoubleUp size={30} className="text-[#5651e5]" /> 
           </HovLink>
         </div>
       </div>
